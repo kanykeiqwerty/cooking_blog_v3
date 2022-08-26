@@ -1,13 +1,13 @@
 
 # from dataclasses import fields
 from rest_framework import serializers
-from . models import Product
+from . models import Recipe
 from django.db.models import Avg
 
 
-class ProductListSerializer(serializers.ModelSerializer):
+class RecipeListSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Product
+        model=Recipe
         fields=('title', 'image')
 
     def to_representation(self, instance):
@@ -16,9 +16,9 @@ class ProductListSerializer(serializers.ModelSerializer):
     
 
 
-class ProductDetailSerializer(serializers.ModelSerializer):
+class RecipeDetailSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Product
+        model=Recipe
         fields='__all__'
 
 

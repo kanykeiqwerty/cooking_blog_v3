@@ -1,5 +1,5 @@
 from django.db import models
-from recipe.models import Product
+from recipe.models import Recipe
 from django.contrib.auth import get_user_model
 
 
@@ -20,7 +20,7 @@ class Mark():
     )
 
 class Review(models.Model):
-    product=models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
+    recipe=models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='reviews')
 
     user=models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
 
